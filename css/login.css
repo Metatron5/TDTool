@@ -1,0 +1,89 @@
+#login-wrapper{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1rem 13rem 42rem 4rem;
+    grid-template-areas: 
+    '.'
+    'header'
+    'main'
+    'footer';
+}
+
+#login-logoarea{
+    grid-area: logoarea;
+    text-align: center;
+}
+
+#login-logo{
+    width: 200px;
+    margin-top: 10px;
+}
+
+#login-titlearea{
+    grid-area: titlearea;
+    text-align: center;
+}
+
+#login-title{
+    grid-area: title;
+    font-size: 3em;
+    margin: 0;
+    height: 55px;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#login-loginarea{
+    grid-area: loginarea;
+}
+
+#login-main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 3rem auto 3rem;
+    grid-template-rows: auto;
+    grid-template-areas:
+    '. loginarea .';
+}
+
+#login-form-login{
+    display: grid;
+    grid-template-columns: auto 15rem 10rem 15rem auto;
+    grid-template-rows: 10rem 5rem 20px 5rem 20px 5rem;
+    grid-template-areas: 
+    '. . . . .' 
+    '. username username username .' 
+    '. . . . .' 
+    '. password password password .' 
+    '. . . . .' 
+    '. . btnlogin . .';
+}
+
+#login-input-username{
+    grid-area: username;
+}
+
+#login-input-password{
+    grid-area: password;
+}
+
+#login-btn-login{
+    grid-area: btnlogin;
+    font-size: 1.8em;
+    padding: 20px 40px 20px 40px;
+    border-radius: 5%;
+    border: 0px;
+    color: #2f3542;
+    background-color: #7bed9f;
+    font-family: lovestory;
+}
+
+#login-footer{
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    '. madebyarea';
+    text-align: center;
+}

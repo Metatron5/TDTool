@@ -1,0 +1,108 @@
+@media only screen and (max-width: 1024px) {
+    #homepage-wrapper{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 50rem 6rem 4rem;
+        grid-template-areas: 
+        'header'
+        '.'
+        'footer';
+    }
+
+    #homepage-header{
+        grid-area: header;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 12rem 19rem 19rem;
+        grid-template-areas:
+        'logoarea'
+        'titlearea'
+        'loginarea';
+    }
+
+    #homepage-logoarea{
+        grid-area: logoarea;
+        text-align: center;
+    }
+
+    #homepage-logo{
+        width: 160px;
+        margin-top: 10px;
+    }
+
+    #homepage-titlearea{
+        grid-area: titlearea;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto 55px 40px auto;
+        grid-template-areas:
+        '.'
+        'title'
+        'slogan'
+        '.';
+    }
+
+    #homepage-title{
+        grid-area: title;
+        font-size: 2.3em;
+        margin: 0;
+        height: 55px;
+        text-align: center;
+    }
+
+    #slogan{
+        grid-area: slogan;
+        font-size: 1.5em;
+        margin: 0;
+        height: 40px;
+        text-align: center;
+    }
+
+    #homepage-loginarea{
+        grid-area: loginarea;
+    }
+
+    #homepage-form-login{
+        text-align: center;
+        margin-top: 3em;
+    }
+
+    #homepage-btn-login{
+        font-size: 1.8em;
+        padding: 20px 40px 20px 40px;
+        border-radius: 5%;
+        border: 0px;
+        color: #2f3542;
+        background-color: #7bed9f;
+        font-family: lovestory;
+    }
+
+    #homepage-main{
+        display: none;
+    }
+
+    input{
+        padding-left: 20px;
+        font-size: 1em;
+    }
+
+    #homepage-footer{
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        'madebyarea';
+        text-align: center;
+    }
+
+    #madebyarea{
+        grid-area: madebyarea;
+    }
+
+    #madeby{
+        color: #FF4B14;
+        font-size: 1em;
+        margin: 0;
+    }
+}

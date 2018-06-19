@@ -1,0 +1,40 @@
+@media only screen and (max-width: 1024px) {
+
+    #login-header{
+        display: grid;
+        grid-area: header;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        'logoarea' 
+        'titlearea';
+        text-align: center;
+    }
+
+    #login-logo{
+        width: 160px;
+    }
+
+    #login-form-login{
+        display: grid;
+        grid-template-columns: auto 10rem auto;
+        grid-template-rows: 10rem 5rem 20px 5rem 20px 5rem;
+        grid-template-areas: 
+        '. . .' 
+        'username username username' 
+        '. . .' 
+        'password password password' 
+        '. . .' 
+        '. btnlogin .';
+    }
+
+    #login-footer {
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'madebyarea';
+        text-align: center;
+    }
+
+}
