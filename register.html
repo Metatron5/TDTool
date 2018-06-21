@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>register for TDTool</title>
+        <link rel="icon" href="images/logo.png">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="css/register.css">
+        <link rel="stylesheet" href="css/mobile-register.css">
+		<script language="javascript" type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body>  
+        <div id="register-wrapper">
+            <header id="register-header">
+                <div id="register-logoarea">
+                    <a href="./">
+                        <img id="register-logo" src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div id="register-titlearea">
+                    <h1 id="register-title">TDTool</h1>
+                </div>
+            </header>
+            <main id="register-main">
+                <div id="register-registerarea">
+                    <form id="register-form-register" onsubmit="registeruser()" method="post">
+                        <input id="register-input-username" name="username" type="text" placeholder="Username" required/>
+                        <input id="register-input-password" name="password" type="password" placeholder="Password" required/>
+                        <input id="register-input-name" name="name" type="text" placeholder="Name" required/>
+                        <input id="register-btn-register" type="submit" value="Register"/>
+                    </form>
+                </div>
+            </main>
+
+            <footer id="register-footer">
+                <div id="madebyarea">
+                    <h6 id="madeby">made by Marcus Heri</h6>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

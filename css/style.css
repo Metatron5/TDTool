@@ -25,6 +25,17 @@ input{
     font-size: 3em;
 }
 
+.homepage-button{
+    font-size: 1.2em;
+    padding: 20px 35px 20px 35px;
+    border-radius: 5%;
+    border: 0px;
+    color: #2f3542;
+    background-color: #7bed9f;
+    font-family: lovestory;
+    height: 65px;
+}
+
 #homepage-wrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -85,21 +96,20 @@ input{
 
 #homepage-loginarea{
     grid-area: loginarea;
-}
-
-#homepage-form-login{
-    text-align: center;
-    margin-top: 3em;
+    display: grid;
+    grid-template-columns: 1fr 10px 1fr;
+    grid-template-rows: 3em auto;
+    grid-template-areas: 
+    '. . .' 
+    'register . login';
 }
 
 #homepage-btn-login{
-    font-size: 1.6em;
-    padding: 20px 40px 20px 40px;
-    border-radius: 5%;
-    border: 0px;
-    color: #2f3542;
-    background-color: #7bed9f;
-    font-family: lovestory;
+    grid-area: login;
+}
+
+#homepage-btn-register{
+    grid-area: register;
 }
 
 #homepage-main{

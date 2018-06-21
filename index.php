@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>To Do Tool</title>
+        <link rel="icon" href="images/logo.png">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/mobile.css">
     </head>
@@ -18,9 +19,8 @@
                     <h2 id="slogan">your Tool for To Do's</h2>
                 </div>
                 <div id="homepage-loginarea">
-                    <form id="homepage-form-login" action="login.php">
-                        <input id="homepage-btn-login" type="submit" value="Login"/>
-                    </form>
+                    <button id="homepage-btn-register" class="homepage-button" value="Login">Regrister</button>
+                    <button id="homepage-btn-login" class="homepage-button" value="Login">Login</button>
                 </div>
             </header>
             <main id="homepage-main">
@@ -33,5 +33,15 @@
                 </div>
             </footer>
         </div>
+
+        <script type="text/javascript">
+            document.getElementById("homepage-btn-register").onclick = function () {
+                location.href = "register.html";
+            };
+
+            document.getElementById("homepage-btn-login").onclick = function () {
+                location.href = "login.html";
+            };
+        </script>
     </body>
 </html>
