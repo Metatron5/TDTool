@@ -50,9 +50,12 @@ if (empty($username) || empty($password) || empty($name)) {
         $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
 
         // Insert user into database
-        $sql = "INSERT INTO user (username, name, password) VALUES ('" . $username . "', '" . $name . "', '" . $hashedpwd . "');";
+        $sql = "INSERT INTO user (username, name, password) VALUES (?, ?, ?);";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $username, $name, $password);
+
         
-        if ($conn->query($sql) === true) {
+        if ($stmt->execute() === true) {
         	$msg = 'success';
         } else {
         	$msg = 'failed';
