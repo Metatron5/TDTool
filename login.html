@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/mobile.css">
         <link rel="stylesheet" href="css/login.css">
         <link rel="stylesheet" href="css/mobile-login.css">
+		<script language="javascript" type="text/javascript" src="js/script.js"></script>
     </head>
     <body>  
         <div id="login-wrapper">
@@ -23,11 +24,10 @@
             </header>
             <main id="login-main">
                 <div id="login-loginarea">
-                    <!-- Formular Userseitig Validiert -->
-                    <form id="login-form-login" method="post" action="login.php">
+                    <form id="login-form-login" method="post">
                         <input id="login-input-username" name="username" type="text" placeholder="Username" required/>
                         <input id="login-input-password" name="password" type="password" placeholder="Password" required/>
-                        <input id="login-btn-login" type="submit" value="Login"/>
+                        <button id="login-btn-login" type="button">Login</button>
                     </form>
                 </div>
             </main>
@@ -39,4 +39,7 @@
             </footer>
         </div>
     </body>
+    <script>
+        document.getElementById('login-btn-login').addEventListener("click", loginuser);
+    </script>
 </html>
