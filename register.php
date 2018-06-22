@@ -22,20 +22,19 @@ if (empty($username) || empty($password) || empty($name)) {
     }
 } else {
     // Check inputs
-    /*
-    if (!preg_match("/^[a-zA-Z0-9\.]*$", $username)) {
+    if (!preg_match("/^[a-zA-Z0-9\.\-\_]+$/", $username)) {
         $msg .= "Only letters or numbers in username \n";
         echo $msg;
         exit();
     }
     
-    if (!preg_match("/^[a-zA-Z]*$", $name)) {
+    if (!preg_match("/^[a-zA-Z\s]+$/", $name)) {
         $msg .= "Only letters or numbers in username \n";
         echo $msg;
         exit();
     }
-    */
-	
+    
+    //Check if Username is avaiable
     $sql = "SELECT *
 			FROM user
 			WHERE username = '" . $username . "'";
@@ -52,7 +51,7 @@ if (empty($username) || empty($password) || empty($name)) {
         // Insert user into database
         $sql = "INSERT INTO user (username, name, password) VALUES (?, ?, ?);";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $username, $name, $password);
+        $stmt->bind_param("sss", $username, $name, $hashedpwd);
 
         
         if ($stmt->execute() === true) {
