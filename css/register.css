@@ -1,4 +1,4 @@
-#login-wrapper{
+#register-wrapper{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 1rem 13rem 39rem 4rem;
@@ -9,22 +9,22 @@
     'footer';
 }
 
-#login-logoarea{
+#register-logoarea{
     grid-area: logoarea;
     text-align: center;
 }
 
-#login-logo{
+#register-logo{
     width: 200px;
     margin-top: 10px;
 }
 
-#login-titlearea{
+#register-titlearea{
     grid-area: titlearea;
     text-align: center;
 }
 
-#login-title{
+#register-title{
     grid-area: title;
     font-size: 3em;
     margin: 0;
@@ -33,42 +33,48 @@
     margin-top: 4rem;
 }
 
-#login-loginarea{
-    grid-area: loginarea;
+#register-registerarea{
+    grid-area: registerarea;
 }
 
-#login-main{
+#register-main{
     grid-area: main;
     display: grid;
     grid-template-columns: 3rem auto 3rem;
     grid-template-rows: auto;
     grid-template-areas:
-    '. loginarea .';
+    '. registerarea .';
 }
 
-#login-form-login{
+#register-form-register{
     display: grid;
     grid-template-columns: auto 15rem 10rem 15rem auto;
-    grid-template-rows: 10rem 5rem 20px 5rem 20px 5rem;
+    grid-template-rows: 10rem 5rem 20px 5rem 20px 5rem 20px 5rem;
     grid-template-areas: 
     '. . . . .' 
     '. username username username .' 
     '. . . . .' 
     '. password password password .' 
     '. . . . .' 
-    '. . btnlogin . .';
+    '. name name name .' 
+    '. . . . .' 
+    '. . btnregister . .';
 }
 
-#login-input-username{
+#register-input-username{
     grid-area: username;
 }
 
-#login-input-password{
+#register-input-password{
     grid-area: password;
 }
 
-#login-btn-login{
-    grid-area: btnlogin;
+#register-input-name{
+    grid-area: name;
+}
+
+#register-btn-register{
+    grid-area: btnregister;
     font-size: 1.8em;
     padding: 20px 40px 20px 40px;
     border-radius: 5%;
@@ -78,7 +84,7 @@
     font-family: lovestory;
 }
 
-#login-footer{
+#register-footer{
     grid-area: footer;
     display: grid;
     grid-template-columns: auto;

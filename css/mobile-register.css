@@ -1,0 +1,41 @@
+@media only screen and (max-width: 1024px) {
+
+    #register-header{
+        display: grid;
+        grid-area: header;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        'logoarea' 
+        'titlearea';
+        text-align: center;
+    }
+
+    #register-logo{
+        width: 160px;
+    }
+
+    #register-form-register{
+        grid-template-columns: auto 10rem auto;
+        grid-template-rows: 10rem 5rem 20px 5rem 20px 5rem 20px 5rem;
+        grid-template-areas: 
+        '. . .' 
+        'username username username' 
+        '. . .' 
+        'password password password' 
+        '. . .' 
+        'name name name' 
+        '. . .' 
+        '. btnregister .';
+    }
+
+    #register-footer {
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'madebyarea';
+        text-align: center;
+    }
+
+}
