@@ -24,11 +24,11 @@
             </header>
             <main id="register-main">
                 <div id="register-registerarea">
-                    <form id="register-form-register" onsubmit="registeruser()" method="post">
+                    <form id="register-form-register" method="post">
                         <input id="register-input-username" name="username" type="text" placeholder="Username" required/>
                         <input id="register-input-password" name="password" type="password" placeholder="Password" required/>
                         <input id="register-input-name" name="name" type="text" placeholder="Name" required/>
-                        <input id="register-btn-register" type="submit" value="Register"/>
+                        <button id="register-btn-register" type="button">Register</button>
                     </form>
                 </div>
             </main>
@@ -40,4 +40,8 @@
             </footer>
         </div>
     </body>
+
+    <script>
+        document.getElementById('register-btn-register').addEventListener("click", function(){registeruser()}, false);
+    </script>
 </html>

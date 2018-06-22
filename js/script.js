@@ -7,7 +7,8 @@ function registeruser() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
-		document.getElementById("register-input-name").value = this.responseText;	
+		//document.getElementById("register-input-name").value = this.responseText;	
+		alert(this.responseText);
 	  }
 	};
 	xhttp.open("POST", "register.php", true);
