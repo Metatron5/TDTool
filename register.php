@@ -1,58 +1,65 @@
 <?php
 include_once 'databaseconn.php';
 
-
 $username = mysqli_real_escape_string($conn, $_POST['username']);
 $password = mysqli_real_escape_string($conn, $_POST['pw']);
 $name = mysqli_real_escape_string($conn, $_POST['name']);
-$errorstring = '';
+$msg = '';
 
-//Error handlers
-//Leere Felder
-if(empty($username) || empty($password) || empty($name)){
-    if(empty($username)){
-        $errorstring .= "Missing username \n";
-    } 
-    if(empty($password)){
-        $errorstring .= "Missing password \n";
-    } 
-    if(empty($name)){
-        $errorstring .= "Missing name";
-    } 
-    echo $errorstring;
-}
-
-else{
-    //Check inputs
-    /*if (!preg_match("/^[a-zA-Z0-9\.]*$", $username)){
-        $errorstring .= "Only Letters or Numbers in Username \n";
-        echo $errorstring;
-        exit();
+// Error handlers
+// Leere Felder
+if (empty($username) || empty($password) || empty($name)) {
+	if (empty($username)) {
+		$msg .= "Missing username \n";
     }
-    if (!preg_match("/^[a-zA-Z]*$", $name)){
-        $errorstring .= "Only Letters or Numbers in Username \n";
-        echo $errorstring;
-        exit();
-    }*/
-    $sql = "SELECT * FROM user Where username = '$username'";
-    $result = mysqli_query($conn, $sql);
-    $resultcheck = mysqli_num_rows($result);
-
-    if($resultcheck > 0){
-        $errorstring .= "User taken";
-        echo $errorstring;
+    
+    if (empty($password)) {
+    	$msg .= "Missing password \n";
+    }
+    
+    if (empty($name)) {
+    	$msg .= "Missing name";
+    }
+} else {
+    // Check inputs
+    /*
+    if (!preg_match("/^[a-zA-Z0-9\.]*$", $username)) {
+        $msg .= "Only letters or numbers in username \n";
+        echo $msg;
         exit();
     }
     
-    else{
-        //Hashing the Password
-        $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
-        //insert the User into Database
-        $sql = "INSERT INTO user ('username', 'name', 'password') VALUES ($username, $name, $hashedpwd);";
-        $result = $conn->query($sql);
-
-        error_log($result);
-        echo 'success';
+    if (!preg_match("/^[a-zA-Z]*$", $name)) {
+        $msg .= "Only letters or numbers in username \n";
+        echo $msg;
         exit();
     }
+    */
+	
+    $sql = "SELECT *
+			FROM user
+			WHERE username = '" . $username . "'";
+    
+    $result = mysqli_query($conn, $sql);
+    $resultcheck = mysqli_num_rows($result);
+
+    if ($resultcheck > 0) {
+    	$msg .= "User taken";
+    } else {
+        // Hash the password
+        $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
+
+        // Insert user into database
+        $sql = "INSERT INTO user (username, name, password) VALUES ('" . $username . "', '" . $name . "', '" . $hashedpwd . "');";
+        
+        if ($conn->query($sql) === true) {
+        	$msg = 'success';
+        } else {
+        	$msg = 'failed';
+        	error_log('Error: ' . $sql . "\n" . $conn->error);
+        }
+    }
 }
+
+die($msg);
+
