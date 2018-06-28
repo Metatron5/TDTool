@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 21. Jun 2018 um 16:26
+-- Erstellungszeit: 28. Jun 2018 um 16:43
 -- Server-Version: 10.1.31-MariaDB
 -- PHP-Version: 7.2.3
 
@@ -31,8 +31,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `message` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `message` varchar(255) DEFAULT NULL
+  `message` varchar(255) DEFAULT NULL,
+  `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `message`
+--
+
+INSERT INTO `message` (`id`, `user_id`, `message`, `timestamp`) VALUES
+(1, 7, 'Lol ä nachricht', '2018-06-28 13:23:16'),
+(2, 7, '2. Nachricht', '2018-06-28 13:50:54');
 
 -- --------------------------------------------------------
 
@@ -47,6 +56,13 @@ CREATE TABLE `project` (
   `task_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Daten für Tabelle `project`
+--
+
+INSERT INTO `project` (`id`, `projectname`, `notice`, `task_id`) VALUES
+(1, 'test', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -56,9 +72,16 @@ CREATE TABLE `project` (
 CREATE TABLE `task` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `description` int(11) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL
+  `description` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `task`
+--
+
+INSERT INTO `task` (`id`, `name`, `description`, `status`) VALUES
+(1, 'test', 'test', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -73,6 +96,13 @@ CREATE TABLE `user` (
   `password` varchar(255) DEFAULT NULL,
   `project_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `name`, `password`, `project_id`) VALUES
+(7, 'admin', 'admin', '$2y$10$wPECs0SaI0uOgDHzPeSPAeTMicIbF3RLSC33hqPy.tAwqFN52pgsq', NULL);
 
 --
 -- Indizes der exportierten Tabellen
@@ -113,25 +143,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT für Tabelle `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints der exportierten Tabellen
