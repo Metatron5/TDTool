@@ -33,3 +33,42 @@ function loginuser() {
 	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	xhttp.send(params);		
 }
+
+function getmessages() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "getmessage.php", true);
+	xhttp.onload = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+			var data = JSON.parse(xhttp.responseText);
+			renderHTML(data);
+	  }
+	};
+	xhttp.send();		
+}
+
+function sendmessage() {
+	var message = document.getElementById('chatinputflield').value;
+	var params = "message="+ message;
+
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "sendmessage.php", true);
+	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	xhttp.send(params);		
+	document.getElementById('chatinputflield').value = '';
+}
+
+
+function renderHTML(data){
+	var messagecontainer = document.getElementById("chatcontent");
+	while (messagecontainer.firstChild) {
+		messagecontainer.removeChild(messagecontainer.firstChild);
+	}
+	var htmlString = "";
+
+	for(i = 0; i < data.length; i++){
+		htmlString += '<div class="message"><p class="username">'+data[i].username + ': </p>';
+		htmlString += '<p class="text">' + data[i].message + '</p></div>';
+	}
+
+	messagecontainer.insertAdjacentHTML('beforeend', htmlString);
+}

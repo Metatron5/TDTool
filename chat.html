@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>To Do Tool</title>
+        <link rel="icon" href="images/logo.png">
+        <link rel="stylesheet" href="css/chat.css">
+        <link rel="stylesheet" href="css/mobile-chat.css">
+		<script src="js/script.js"></script>
+    </head>
+    <body>        
+        <div id="chat-wrapper">
+            <header id="chat-header">
+                <div id="chat-menuarea"></div>
+                <div id="chat-logoarea">
+                    <img id="chat-logo" src="images/logo.png" alt="">
+                </div>
+                <div id="chat-logoutarea">
+                    <button id="chat-btn-logout" class="chat-button" value="logout">Logout</button>
+                </div>
+            </header>
+
+            <main id="chat-main">
+                <div id="chatcontent">
+		            <script>setInterval(function(){getmessages();},1000);</script>
+                    <!--
+                    <div class="message">
+                        <p class="username">admin: </p>
+                        <p class="text">lol wie luschtig</p>
+                    </div>
+                    -->
+                </div>
+                <div id="chatinput">
+                    <input id="chatinputflield" name="message" type="text"required/>
+                    <button id="chatinputsend">send</button>
+                </div>
+            </main>
+
+            <footer id="chat-footer">
+                <div id="madebyarea">
+                    <h6 id="madeby">made by Marcus Heri</h6>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <script>document.getElementById('chatinputsend').addEventListener("click", sendmessage);</script>
+</html>
