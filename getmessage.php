@@ -7,12 +7,13 @@ $sql = "SELECT username, message, timestamp FROM message INNER JOIN user ON mess
 $result = mysqli_query($conn, $sql);
 $resultcheck = mysqli_num_rows($result);
 
+//Check if there are messages
 if ($resultcheck == 0) {
     echo 'no message existing';
 }
 
 else{
-
+    //making JSON
     $out = '[';
 
     while($row = mysqli_fetch_assoc($result))

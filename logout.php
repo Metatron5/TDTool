@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+//Logout session
 if (session_status() === PHP_SESSION_ACTIVE) {
     session_unset();
     if (ini_get('session.use_cookies')) {

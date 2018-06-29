@@ -18,10 +18,9 @@ $userid = $row["id"];
 if (empty($message)) {
 	$msg .= "Missing username \n";
 } 
-else {    
-    //Check if Username is avaiable
 
-    // Insert user into database
+else {    
+    // Insert message into database
     $sql = "INSERT INTO message (user_id, message) VALUES (?, ?);";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $userid, $message);
