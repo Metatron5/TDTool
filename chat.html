@@ -3,16 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>To Do Tool</title>
+        <title>Chat Tool</title>
         <link rel="icon" href="images/logo.png">
         <link rel="stylesheet" href="css/chat.css">
         <link rel="stylesheet" href="css/mobile-chat.css">
 		<script src="js/script.js"></script>
+        <script>setInterval(function(){islogedin();},1000);</script>
+        <script>setInterval(function(){logout();},1000000);</script>
     </head>
     <body>        
         <div id="chat-wrapper">
             <header id="chat-header">
-                <div id="chat-menuarea"></div>
+                <div id="chat-title">
+                    <h1 id="chat-title">CTool</h1>
+                </div>
                 <div id="chat-logoarea">
                     <img id="chat-logo" src="images/logo.png" alt="">
                 </div>
@@ -45,4 +49,5 @@
         </div>
     </body>
     <script>document.getElementById('chatinputsend').addEventListener("click", sendmessage);</script>
+    <script>document.getElementById('chat-btn-logout').addEventListener("click", logout);</script>
 </html>
