@@ -1,8 +1,9 @@
 function registeruser() {
 	var username = document.getElementById('register-input-username').value;
 	var pw = document.getElementById('register-input-password').value;
-	var name = document.getElementById('register-input-name').value;
-	var params = "username="+ username + "&pw=" + pw + "&name=" + name;
+	var firstname = document.getElementById('register-input-firstname').value;
+	var lastname = document.getElementById('register-input-lastname').value;
+	var params = "username="+ username + "&pw=" + pw + "&firstname=" + firstname + "&lastname=" + lastname;
 
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {

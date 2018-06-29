@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 29. Jun 2018 um 09:52
+-- Erstellungszeit: 29. Jun 2018 um 13:53
 -- Server-Version: 10.1.31-MariaDB
 -- PHP-Version: 7.2.3
 
@@ -41,7 +41,9 @@ CREATE TABLE `message` (
 
 INSERT INTO `message` (`id`, `user_id`, `message`, `timestamp`) VALUES
 (1, '1', 'lol', '2018-06-29 07:51:39'),
-(2, '2', 'es funktioniert', '2018-06-29 07:51:58');
+(2, '2', 'es funktioniert', '2018-06-29 07:51:58'),
+(3, '2', ':D', '2018-06-29 07:56:17'),
+(4, '1', 'lol wie lustig', '2018-06-29 08:41:49');
 
 -- --------------------------------------------------------
 
@@ -51,8 +53,9 @@ INSERT INTO `message` (`id`, `user_id`, `message`, `timestamp`) VALUES
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -60,9 +63,8 @@ CREATE TABLE `user` (
 -- Daten für Tabelle `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `name`, `password`) VALUES
-(1, 'Metatron5', 'Marcus Heri', '$2y$10$0nIyaYC/C0HPobYBoSI19uhCml1a1gjcsEKFZCJApiboZR90JRFEG'),
-(2, 'tester', 'tester max', '$2y$10$pZoEgsktmOqqXtsrYh3.5OmdZMy2bQ6shcs9SZU7LY1iawVejSlqK');
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `username`, `password`) VALUES
+(3, 'test', 'test', 'test', '$2y$10$S0Ud8Cezi4TVfSJbSr1TieSBhow12RMwDwNjquZEO5H1xHXcYQI9G');
 
 --
 -- Indizes der exportierten Tabellen
@@ -88,13 +90,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

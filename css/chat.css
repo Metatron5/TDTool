@@ -17,7 +17,7 @@ html, body{
 }
 
 h1, h2{
-    color: #FF4B14;
+    color: #cc1d1d;
 }
 
 input{
@@ -39,6 +39,7 @@ input{
 
 .username{
     grid-area: user;
+    font-weight: bold;
 }
 
 .text{
@@ -97,8 +98,8 @@ input{
     font-size: 1.2em;
     border-radius: 5%;
     border: 0px;
-    color: #2f3542;
-    background-color: #7bed9f;
+    color: white;
+    background-color: #cc1d1d;
     font-family: lovestory;
     height: 65px;
     margin-top: 2em;
@@ -123,7 +124,7 @@ input{
 
 #chatcontent{
     grid-area: chatcontent;
-    background-color: #e4e4e4;
+    background-color: #f5f5f5;
     border: none;
     resize: none;
     overflow-y: scroll;
@@ -146,8 +147,8 @@ input{
 
 #chatinputsend{
     grid-area: send;
-    font-size: 1.2em;
-    color: #2f3542;
+    font-size: 1.8em;
+    color: #cc1d1d;
     font-family: lovestory;
 }
 
@@ -171,7 +172,7 @@ input{
 }
 
 #madeby{
-    color: #FF4B14;
+    color: #cc1d1d;
     font-size: 1em;
     margin: 0;
 }

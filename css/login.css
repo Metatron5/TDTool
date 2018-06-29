@@ -24,7 +24,7 @@
 }
 
 #login-logo{
-    width: 200px;
+    width: 165px;
     margin-top: 10px;
 }
 
@@ -82,8 +82,8 @@
     padding: 20px 40px 20px 40px;
     border-radius: 5%;
     border: 0px;
-    color: #2f3542;
-    background-color: #7bed9f;
+    color: white;
+    background-color: #cc1d1d;
     font-family: lovestory;
 }
 

@@ -27,7 +27,8 @@
                     <form id="register-form-register" method="post">
                         <input id="register-input-username" name="username" type="text" placeholder="Username" required/>
                         <input id="register-input-password" name="password" type="password" placeholder="Password" required/>
-                        <input id="register-input-name" name="name" type="text" placeholder="Name" required/>
+                        <input id="register-input-firstname" name="firstname" type="text" placeholder="Firstname" required/>
+                        <input id="register-input-lastname" name="lastname" type="text" placeholder="Lastname" required/>
                         <button id="register-btn-register" type="button">Register</button>
                     </form>
                 </div>
@@ -46,23 +47,30 @@
 
         function checkinput(){
             var username = document.getElementById('register-input-username').value;
-            var name = document.getElementById('register-input-name').value;
+            var firstname = document.getElementById('register-input-firstname').value;
+            var lastname = document.getElementById('register-input-lastname').value;
             var password = document.getElementById('register-input-password').value;
             var msg = "";
             
             document.getElementById('register-input-username').classList.remove('paintred');
-            document.getElementById('register-input-name').classList.remove('paintred');
+            document.getElementById('register-input-firstname').classList.remove('paintred');
+            document.getElementById('register-input-lastname').classList.remove('paintred');
             document.getElementById('register-input-password').classList.remove('paintred');
 
-            if(username == "" || name =="" || password == ""){
+            if(username == "" || firstname =="" || lastname =="" || password == ""){
                 if (username == "") {
                     msg += "Missing username \n";
                     document.getElementById('register-input-username').classList.add('paintred');
                 }
 
-                if (name == "") {
-                    msg += "Missing name \n";
-                    document.getElementById('register-input-name').classList.add('paintred');
+                if (firstname == "") {
+                    msg += "Missing firstname \n";
+                    document.getElementById('register-input-firstname').classList.add('paintred');
+                }
+
+                if (lastname == "") {
+                    msg += "Missing lastname \n";
+                    document.getElementById('register-input-lastname').classList.add('paintred');
                 }
                 
                 if (password == "") {

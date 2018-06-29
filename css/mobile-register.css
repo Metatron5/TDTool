@@ -17,14 +17,16 @@
 
     #register-form-register{
         grid-template-columns: auto 10rem auto;
-        grid-template-rows: 10rem 5rem 20px 5rem 20px 5rem 20px 5rem;
+        grid-template-rows: 10rem 5rem 20px 5rem 20px 5rem 20px 5rem 20px 5rem;
         grid-template-areas: 
         '. . .' 
         'username username username' 
         '. . .' 
         'password password password' 
         '. . .' 
-        'name name name' 
+        'firstname firstname firstname' 
+        '. . .' 
+        'lastname lastname lastname' 
         '. . .' 
         '. btnregister .';
     }

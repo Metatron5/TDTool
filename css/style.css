@@ -17,7 +17,7 @@ html, body{
 }
 
 h1, h2{
-    color: #FF4B14;
+    color: #cc1d1d;
 }
 
 input{
@@ -30,8 +30,8 @@ input{
     padding: 20px 35px 20px 35px;
     border-radius: 5%;
     border: 0px;
-    color: #2f3542;
-    background-color: #7bed9f;
+    color: white;
+    background-color: #cc1d1d;
     font-family: lovestory;
     height: 65px;
 }
@@ -119,7 +119,7 @@ input{
 }
 
 #homepage-text{
-    color: #7bed9f;
+    color: #cc1d1d;
     font-size: 3em;
 }
 
@@ -137,7 +137,7 @@ input{
 }
 
 #madeby{
-    color: #FF4B14;
+    color: #cc1d1d;
     font-size: 1em;
     margin: 0;
 }

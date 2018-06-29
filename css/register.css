@@ -10,7 +10,7 @@
 #register-wrapper{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 1rem 13rem 39rem 4rem;
+    grid-template-rows: 1rem 13rem 42rem 4rem;
     grid-template-areas: 
     '.'
     'header'
@@ -24,7 +24,7 @@
 }
 
 #register-logo{
-    width: 200px;
+    width: 165px;
     margin-top: 10px;
 }
 
@@ -58,14 +58,16 @@
 #register-form-register{
     display: grid;
     grid-template-columns: auto 15rem 10rem 15rem auto;
-    grid-template-rows: 10rem 5rem 20px 5rem 20px 5rem 20px 5rem;
+    grid-template-rows: 10rem 5rem 20px 5rem 20px 5rem 20px 5rem 20px 5rem;
     grid-template-areas: 
     '. . . . .' 
     '. username username username .' 
     '. . . . .' 
     '. password password password .' 
     '. . . . .' 
-    '. name name name .' 
+    '. firstname firstname firstname .' 
+    '. . . . .' 
+    '. lastname lastname lastname .' 
     '. . . . .' 
     '. . btnregister . .';
 }
@@ -78,8 +80,13 @@
     grid-area: password;
 }
 
-#register-input-name{
-    grid-area: name;
+#register-input-firstname{
+    grid-area: firstname;
+}
+
+
+#register-input-lastname{
+    grid-area: lastname;
 }
 
 #register-btn-register{
@@ -88,8 +95,8 @@
     padding: 20px 40px 20px 40px;
     border-radius: 5%;
     border: 0px;
-    color: #2f3542;
-    background-color: #7bed9f;
+    color: white;
+    background-color: #cc1d1d;
     font-family: lovestory;
 }
 
