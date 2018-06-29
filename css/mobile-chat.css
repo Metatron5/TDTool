@@ -20,7 +20,7 @@
         grid-template-columns: auto;
         grid-template-rows: 8rem auto 4rem;
         grid-template-areas: 
-        'header' 'main' 'footer';
+        'header' 'main' '.' 'footer';
     }
 
     #chat-header{
@@ -29,7 +29,7 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 8rem;
         grid-template-areas:
-        'menuarea logoarea logoutarea';
+        'logoarea . logoutarea';
     }
 
     #chat-logoarea{
@@ -42,24 +42,8 @@
         margin-top: 10px;
     }
 
-    #chat-titlearea{
-        grid-area: titlearea;
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto 55px 40px auto;
-        grid-template-areas:
-        '.'
-        'title'
-        'slogan'
-        '.';
-    }
-
     #chat-title{
-        grid-area: title;
-        font-size: 2.3em;
-        margin: 0;
-        height: 55px;
-        text-align: center;
+        display: none;
     }
 
     #slogan{

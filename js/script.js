@@ -25,7 +25,7 @@ function loginuser() {
 	xhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 			if(this.responseText == 'true'){
-				location.href = "chat.php"; 
+				location.href = "chat.html"; 
 			}
 	  }
 	};
@@ -55,6 +55,34 @@ function sendmessage() {
 	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	xhttp.send(params);		
 	document.getElementById('chatinputflield').value = '';
+}
+
+function logout() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+			if(this.responseText == 'true'){
+				location.href = "./"; 
+			}
+	  }
+	};
+	xhttp.open("POST", "logout.php", true);
+	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	xhttp.send();	
+}
+
+function islogedin() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+			if(this.responseText == 'false'){
+				location.href = "./"; 
+			}
+	  }
+	};
+	xhttp.open("POST", "islogedin.php", true);
+	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	xhttp.send();		
 }
 
 
