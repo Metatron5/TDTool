@@ -40,6 +40,31 @@
         </div>
     </body>
     <script>
-        document.getElementById('login-btn-login').addEventListener("click", loginuser);
+        document.getElementById('login-btn-login').addEventListener("click", checkinput);
+
+        function checkinput(){
+            var username = document.getElementById('login-input-username').value;
+            var password = document.getElementById('login-input-password').value;
+            
+            document.getElementById('login-input-username').classList.remove('paintred');
+            document.getElementById('login-input-password').classList.remove('paintred');
+            
+            var msg = "";
+            if(username == "" || password == ""){
+                if (username == "") {
+                    msg += "Missing username \n";
+                    document.getElementById('login-input-username').classList.add('paintred');
+                }
+                
+                if (password == "") {
+                    msg += "Missing password \n";
+                    document.getElementById('login-input-password').classList.add('paintred');
+                }
+                alert(msg);
+            }
+            else{
+                loginuser();
+            }
+        }
     </script>
 </html>

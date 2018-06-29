@@ -30,6 +30,11 @@ input{
     grid-auto-columns: 100px auto;
     grid-template-areas: 'user messagetext';
     text-align: left;
+    border-bottom: 1px dotted black;
+}
+
+.message:last-child{
+    border-bottom: none;
 }
 
 .username{

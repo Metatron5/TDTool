@@ -42,6 +42,38 @@
     </body>
 
     <script>
-        document.getElementById('register-btn-register').addEventListener("click", registeruser);
+        document.getElementById('register-btn-register').addEventListener("click", checkinput);
+
+        function checkinput(){
+            var username = document.getElementById('register-input-username').value;
+            var name = document.getElementById('register-input-name').value;
+            var password = document.getElementById('register-input-password').value;
+            var msg = "";
+            
+            document.getElementById('register-input-username').classList.remove('paintred');
+            document.getElementById('register-input-name').classList.remove('paintred');
+            document.getElementById('register-input-password').classList.remove('paintred');
+
+            if(username == "" || name =="" || password == ""){
+                if (username == "") {
+                    msg += "Missing username \n";
+                    document.getElementById('register-input-username').classList.add('paintred');
+                }
+
+                if (name == "") {
+                    msg += "Missing name \n";
+                    document.getElementById('register-input-name').classList.add('paintred');
+                }
+                
+                if (password == "") {
+                    msg += "Missing password \n";
+                    document.getElementById('register-input-password').classList.add('paintred');
+                }
+                alert(msg);
+            }
+            else{
+                registeruser();
+            }
+        }
     </script>
 </html>

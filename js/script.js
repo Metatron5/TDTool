@@ -27,6 +27,9 @@ function loginuser() {
 			if(this.responseText == 'true'){
 				location.href = "chat.html"; 
 			}
+			else{
+				alert(this.responseText) 
+			}
 	  }
 	};
 	xhttp.open("POST", "login.php", true);
