@@ -161,7 +161,7 @@ input{
     grid-area: footer;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-rows: 3em;
     grid-template-areas: 
     'madebyarea';
     text-align: center;

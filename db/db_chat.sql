@@ -7,6 +7,9 @@
 -- Server-Version: 10.1.31-MariaDB
 -- PHP-Version: 7.2.3
 
+CREATE DATABASE db_chat;
+USE db_chat;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
